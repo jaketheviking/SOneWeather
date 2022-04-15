@@ -1,0 +1,29 @@
+﻿@model WeatherReport
+@using Nop.Plugin.Misc.SOneWeather.Domains
+@{
+    Layout = "~/Plugins/Misc.SOneWeather/Views/_Layout.cshtml";
+    var iconUrl = "https://openweathermap.org/img/w/" + Model.Icon + ".png";
+}
+
+<h1>Weather in @Model.City</h1>
+<center>
+    <table class="weather">
+        <tr>
+            <td class="temp">@Model.Temp°F</td>
+            <td colspan="2" class="notes"><img src="@iconUrl" /> @Model.Main</td>
+        </tr>
+        <tr>
+            <td>@if (!String.IsNullOrWhiteSpace(Model.FeelsLike))
+            {<b>Feels Like</b> <span>@Model.FeelsLike°F</span>}</td>
+            <td>@if (!String.IsNullOrWhiteSpace(Model.Humidity))
+            {<b>Humidity</b> <span>@Model.Humidity%</span>}</td>
+            <td>@if (!String.IsNullOrWhiteSpace(Model.WindSpeed))
+            {<b>Wind</b> <span>@Model.WindSpeed MPH </span>}</td>
+        </tr>
+    </table>
+</center>
+
+
+<p>Look Up Another Zip Code</p>
+<p id="errorMessage"></p>
+@Html.Partial("~/Plugins/Misc.SOneWeather/Views/_LookupForm.cshtml")

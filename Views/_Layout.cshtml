@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>S-One Weather Lookup Demo</title>
+    <link rel="stylesheet" href="~/Plugins/Misc.SOneWeather/Content/css/site.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@600&display=swap" rel="stylesheet">
+    <script src="~/lib_npm/jquery/jquery.min.js"></script>
+    <script>
+        function validateZipcode() {
+            if (/^\d{5}$|^\d{5}-\d{4}$/.test($("#PostalCode").val()) == false) {
+                $("#errorMessage").html('That is not a valid zip code');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">S-1 Holdings Weather Lookup Demo</div>
+    <div class="page-body">
+        @RenderBody()
+    </div>
+    <div class="footer">Created as a nopCommerce plugin by Jake Smith</div>
+</body>
+</html>

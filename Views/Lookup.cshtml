@@ -1,0 +1,7 @@
+﻿@model String
+@{
+    Layout = "~/Plugins/Misc.SOneWeather/Views/_Layout.cshtml";
+}
+
+@if(Model != null){ <p id="errorMessage">@Model</p><p>Please Enter a Valid US Zip Code</p> } else { <p id="errorMessage"></p><p>Please Enter a US Zip Code</p> }
+@Html.Partial("~/Plugins/Misc.SOneWeather/Views/_LookupForm.cshtml")

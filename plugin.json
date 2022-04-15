@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Misc",
+  "FriendlyName": "S-One Weather",
+  "SystemName": "Misc.SOneWeather",
+  "Version": "1.1",
+  "SupportedVersions": [ "4.40" ],
+  "Author": "Jake Smith",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Misc.SOneWeather.dll",
+  "Description": "This plugin returns the weather conditions for a given zip code"
+}
